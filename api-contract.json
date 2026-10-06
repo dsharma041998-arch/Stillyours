@@ -1,0 +1,22 @@
+{
+  "aiStyleMatch": {
+    "method": "POST",
+    "suggestedPath": "/api/style-match",
+    "input": "multipart/form-data image",
+    "output": {
+      "style": "string",
+      "summary": "string",
+      "recommendations": [
+        {
+          "productId": "number",
+          "match": "number",
+          "reason": "string"
+        }
+      ]
+    }
+  },
+  "memoryStory": {
+    "suggestedPath": "/api/memories",
+    "privacy": "private-by-default"
+  }
+}

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#171613">
+  <meta name="description" content="Still Yours — fashion, AI personalization and memories. Some things deserve a second story.">
+  <title>STILL YOURS — Some things deserve a second story.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <header class="nav" id="nav">
+    <a class="wordmark" href="#home" aria-label="Still Yours home">STILL <span>YOURS</span></a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#ai">AI Style Match</a>
+      <a href="#customize">Customize</a><a href="#story">Our Story</a><a href="#wall">Memory Wall</a><a href="#b2b">B2B</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+      <button class="icon-btn bag-btn" id="cartBtn" aria-label="Cart">Bag <b id="cartCount">0</b></button>
+      <button class="outline-btn upload-nav" data-scroll="#ai">UPLOAD YOUR MEMORY</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a><a href="#shop">Shop</a><a href="#ai">AI Style Match</a><a href="#customize">Customize</a>
+    <a href="#story">Our Story</a><a href="#wall">Memory Wall</a><a href="#b2b">B2B</a>
+    <button class="primary-btn" data-scroll="#ai">UPLOAD YOUR MEMORY</button>
+  </div>
+
+  <main id="home">
+    <section class="hero section-dark">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">FASHION × MEMORY × AI</p>
+        <h1>STILL<br><em>YOURS.</em></h1>
+        <p class="hero-tagline">Some things deserve a second story.</p>
+        <p class="hero-body">Your clothes hold more than fabric. They hold moments, people, places and memories. Still Yours helps you rewear, reimagine and personalize the things you love.</p>
+        <div class="hero-actions">
+          <button class="light-btn" data-scroll="#ai">DISCOVER YOUR STYLE <span>↗</span></button>
+          <button class="text-btn light" data-scroll="#ai">UPLOAD YOUR MEMORY <span>→</span></button>
+        </div>
+        <div class="hero-meta"><span>01 / 08</span><span>THE SECOND STORY EDIT</span><span>SCROLL TO EXPLORE ↓</span></div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-image image-one"></div>
+        <div class="memory-note">“Some things are too precious<br>to let go.”<small>— STILL YOURS</small></div>
+        <div class="floating-tag">AI<br><span>STYLE<br>MATCH</span></div>
+        <div class="floating-photo"><div class="photo-inner"></div><span>1998 / DAD'S SHIRT</span></div>
+      </div>
+    </section>
+
+    <section class="manifesto section-cream" id="idea">
+      <div class="split-heading reveal"><p class="eyebrow">THE IDEA / 01</p><h2>MORE THAN CLOTHING.<br><em>IT’S A STORY.</em></h2></div>
+      <div class="manifesto-copy reveal">
+        <p>We believe meaningful clothing should not simply become disposable when it is no longer new.</p>
+        <p>Still Yours turns the things you already care about into useful, personal objects — with AI helping you discover the next form.</p>
+      </div>
+      <div class="idea-grid">
+        <article class="idea-card reveal"><span>01</span><h3>REMEMBER</h3><p>Every product can carry a personal memory.</p><i>↗</i></article>
+        <article class="idea-card reveal"><span>02</span><h3>REWEAR</h3><p>Give your favourite pieces another life.</p><i>↗</i></article>
+        <article class="idea-card reveal"><span>03</span><h3>REIMAGINE</h3><p>Use AI to discover new ways to style and customize.</p><i>↗</i></article>
+        <article class="idea-card dark reveal"><span>04</span><h3>SECOND STORY</h3><p>Turn something meaningful into something new without losing the feeling behind it.</p><i>↗</i></article>
+      </div>
+    </section>
+
+    <section class="ai-section section-dark" id="ai">
+      <div class="section-intro centered reveal">
+        <p class="eyebrow">THE DIFFERENCE / 02</p>
+        <h2>MEET YOUR <em>MEMORY AI.</em></h2>
+        <p>Upload a picture. Discover what feels like you.</p>
+        <small>Our AI prototype reads visual cues such as colour, silhouette and mood, then turns those signals into product recommendations. Connect a real vision model later through the documented API hook.</small>
+      </div>
+
+      <div class="ai-lab reveal">
+        <div class="upload-panel" id="uploadPanel">
+          <input type="file" id="memoryInput" accept="image/*" hidden>
+          <div class="upload-icon">↑</div>
+          <h3>UPLOAD YOUR MEMORY</h3>
+          <p>Drop an image here or choose one from your device.</p>
+          <button class="light-btn" id="chooseMemory">CHOOSE IMAGE</button>
+          <div class="upload-preview" id="uploadPreview"></div>
+          <div class="ai-status" id="aiStatus"></div>
+        </div>
+        <div class="ai-result" id="aiResult">
+          <div class="result-empty"><span>✦</span><h3>YOUR PERSONALIZED EDIT</h3><p>Your style analysis and recommendations will appear here.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="customize section-warm" id="customize">
+      <div class="custom-copy reveal">
+        <p class="eyebrow">AI CUSTOMIZATION / 03</p>
+        <h2>MAKE IT <em>YOURS.</em></h2>
+        <p>Turn an old photograph, date, phrase or memory into a graphic made for a product you choose.</p>
+        <p class="serif-quote">Your memory. Your design. Still Yours.</p>
+        <div class="custom-controls">
+          <label class="field"><span>MEMORY IMAGE</span><input type="file" id="designInput" accept="image/*"></label>
+          <label class="field"><span>TEXT</span><input id="designText" placeholder="e.g. First college trip"></label>
+          <div class="field-row">
+            <label class="field"><span>DATE</span><input id="designDate" placeholder="1998"></label>
+            <label class="field"><span>FONT</span><select id="designFont"><option value="serif">Editorial</option><option value="sans">Modern</option><option value="mono">Archive</option></select></label>
+          </div>
+          <div class="swatches"><span>COLOUR</span><button class="swatch active" data-col="#171613"></button><button class="swatch" data-col="#6c775b"></button><button class="swatch" data-col="#9c5f46"></button><button class="swatch" data-col="#eee4d2"></button></div>
+          <button class="primary-btn" id="generateDesign">GENERATE WITH AI <span>✦</span></button>
+        </div>
+      </div>
+      <div class="mockup-stage reveal">
+        <div class="product-switcher"><button class="active" data-product="tee">TEE</button><button data-product="hoodie">HOODIE</button><button data-product="tote">TOTE</button></div>
+        <div class="mockup" id="mockup">
+          <div class="garment tee" id="garment"><div class="design-print" id="designPrint"><span id="printText">YOUR STORY</span><small id="printDate">STILL YOURS</small></div></div>
+        </div>
+        <p class="mock-caption">LIVE PREVIEW / AI DESIGN PROTOTYPE</p>
+      </div>
+    </section>
+
+    <section class="qr-section section-cream">
+      <div class="qr-copy reveal"><p class="eyebrow">MEMORY TECHNOLOGY / 04</p><h2>EVERY PRODUCT<br><em>HAS A STORY.</em></h2><p>Every Still Yours product can have its own unique QR code. Scan it and discover the memory behind the product.</p><button class="dark-btn" id="openMemory">OPEN MEMORY DEMO ↗</button></div>
+      <div class="qr-card reveal">
+        <div class="qr-product"><div class="qr-shirt"></div><div class="qr-sticker"><div class="fake-qr">▦</div><small>SCAN TO REMEMBER</small></div></div>
+        <div class="qr-caption"><span>DAD'S SHIRT / 1998</span><strong>THIS WASN’T JUST A JACKET.</strong><p>“It was the jacket I wore on my first college trip.”</p></div>
+      </div>
+    </section>
+
+    <section class="second-story section-dark">
+      <div class="story-transform reveal"><div class="transform-img before"></div><div class="transform-label">BEFORE<br><small>THE CUPBOARD</small></div></div>
+      <div class="transform-center reveal"><p class="eyebrow">THE TRANSFORMATION / 05</p><h2>ONE PRODUCT.<br><em>TWO STORIES.</em></h2><p>Instead of throwing away something meaningful, give it another beginning.</p><button class="light-btn" data-scroll="#ai">START YOUR SECOND STORY →</button></div>
+      <div class="story-transform reveal"><div class="transform-img after"></div><div class="transform-label">AFTER<br><small>THE SECOND STORY</small></div></div>
+    </section>
+
+    <section class="shop section-cream" id="shop">
+      <div class="shop-head reveal"><div><p class="eyebrow">THE SHOP / 06</p><h2>THE <em>STILL YOURS</em> EDIT.</h2></div><button class="text-btn" id="clearFilters">RESET FILTERS ↺</button></div>
+      <div class="shop-tools reveal">
+        <div class="categories" id="categories">
+          <button class="active" data-cat="All">All</button><button data-cat="T-Shirts">T-Shirts</button><button data-cat="Hoodies">Hoodies</button><button data-cat="Shirts">Shirts</button><button data-cat="Jackets">Jackets</button><button data-cat="Accessories">Accessories</button><button data-cat="Custom Products">Custom</button><button data-cat="Reworked / Upcycled">Reworked</button><button data-cat="Memory Collection">Memory</button>
+        </div>
+        <div class="searchbox"><span>⌕</span><input id="productSearch" placeholder="Search the edit…"></div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state" id="shopEmpty">No pieces match that search. Try another story.</div>
+    </section>
+
+    <section class="wall section-warm" id="wall">
+      <div class="section-intro reveal"><p class="eyebrow">COMMUNITY / 07</p><h2>THE <em>MEMORY WALL.</em></h2><p>A living archive of the things people choose to keep close.</p></div>
+      <div class="wall-grid">
+        <article class="memory-card tall reveal"><div class="wall-image wall-a"></div><div><span>STILL YOURS TEE / 2026</span><h3>“Still wearing the T-shirt from my first concert.”</h3><button class="text-btn read-story" data-story="My first concert was loud, imperfect and unforgettable. The tee stayed in the cupboard for years. Now it comes with me again.">READ STORY →</button></div></article>
+        <article class="memory-card reveal"><div class="wall-image wall-b"></div><div><span>MEMORY TOTE / 2025</span><h3>“Some memories deserve to be worn again.”</h3><button class="text-btn read-story" data-story="A pocket from an old shirt became the part I touch every day. Same fabric. New rhythm.">READ STORY →</button></div></article>
+        <article class="memory-card reveal"><div class="wall-image wall-c"></div><div><span>REWORKED HOODIE / 2026</span><h3>“The trip ended. The hoodie stayed.”</h3><button class="text-btn read-story" data-story="A travel hoodie became a quiet reminder of a place I never wanted to forget.">READ STORY →</button></div></article>
+      </div>
+      <button class="outline-btn centered-btn" id="shareStory">SHARE YOUR STORY +</button>
+    </section>
+
+    <section class="sustainability section-cream">
+      <div class="sustain-copy reveal"><p class="eyebrow">THE LONGER LIFE / 08</p><h2>FASHION SHOULD HAVE<br><em>MORE THAN ONE LIFE.</em></h2><p>Still Yours encourages rewearing, reusing, upcycling, personalization and longer product life — without inventing impact statistics.</p></div>
+      <div class="sustain-grid">
+        <div class="sustain-card reveal"><strong>REWEAR</strong><span>01</span><p>Wear what already means something.</p></div>
+        <div class="sustain-card reveal"><strong>REUSE</strong><span>02</span><p>Keep valuable material in circulation.</p></div>
+        <div class="sustain-card reveal"><strong>REIMAGINE</strong><span>03</span><p>Find a form that fits your life now.</p></div>
+        <div class="sustain-card reveal"><strong>RECONNECT</strong><span>04</span><p>Keep the story attached to the object.</p></div>
+      </div>
+    </section>
+
+    <section class="comparison section-dark">
+      <div class="section-intro centered reveal"><p class="eyebrow">WHY STILL YOURS? / 09</p><h2>THE ALTERNATIVE TO<br><em>FORGETTING.</em></h2></div>
+      <div class="compare-grid reveal">
+        <div class="compare traditional"><span>TRADITIONAL FASHION</span><div>BUY</div><i>→</i><div>WEAR</div><i>→</i><div>FORGET</div><i>→</i><div>REPLACE</div></div>
+        <div class="compare ours"><span>STILL YOURS</span><div>REMEMBER</div><i>→</i><div>REWEAR</div><i>→</i><div>REIMAGINE</div><i>→</i><div>PERSONALIZE</div><i>→</i><div>SECOND STORY</div></div>
+      </div>
+    </section>
+
+    <section class="unique section-warm">
+      <div class="section-intro reveal"><p class="eyebrow">THE SYSTEM / 10</p><h2>WHAT MAKES US <em>UNIQUE.</em></h2></div>
+      <div class="feature-grid">
+        <article class="feature reveal"><span>01</span><h3>EMOTIONAL FASHION</h3><p>Products connected to memories.</p></article>
+        <article class="feature reveal"><span>02</span><h3>AI PERSONALIZATION</h3><p>Recommendations based on your own image and aesthetic.</p></article>
+        <article class="feature reveal"><span>03</span><h3>CUSTOM DESIGNS</h3><p>Turn personal memories into wearable designs.</p></article>
+        <article class="feature reveal"><span>04</span><h3>QR MEMORY</h3><p>Connect physical products with digital stories.</p></article>
+        <article class="feature reveal"><span>05</span><h3>SUSTAINABILITY</h3><p>Encourage products to have longer lives.</p></article>
+        <article class="feature reveal"><span>06</span><h3>PERSONAL EXPRESSION</h3><p>Make every product feel uniquely yours.</p></article>
+      </div>
+    </section>
+
+    <section class="how section-cream">
+      <div class="section-intro centered reveal"><p class="eyebrow">THE JOURNEY / 11</p><h2>MEMORY → AI → <em>SECOND STORY.</em></h2></div>
+      <div class="steps">
+        <div class="step reveal"><b>01</b><h3>UPLOAD</h3><p>Upload a photo or memory.</p></div>
+        <div class="step reveal"><b>02</b><h3>AI UNDERSTANDS</h3><p>AI analyses your style, colours and aesthetic.</p></div>
+        <div class="step reveal"><b>03</b><h3>DISCOVER</h3><p>Get personalized product recommendations.</p></div>
+        <div class="step reveal"><b>04</b><h3>CUSTOMIZE</h3><p>Make the product your own.</p></div>
+        <div class="step reveal"><b>05</b><h3>KEEP THE STORY</h3><p>Connect the product to its digital memory through QR.</p></div>
+      </div>
+    </section>
+
+    <section class="story-section section-warm" id="story">
+      <div class="story-image reveal"></div>
+      <div class="story-copy reveal"><p class="eyebrow">OUR STORY / 12</p><h2>WE DON’T WANT YOU TO<br><em>THROW THE STORY AWAY.</em></h2><p>Still Yours started with a simple thought: why do we treat meaningful things as disposable just because they are no longer new?</p><p>Our vision is to bring emotion back into fashion by combining sustainability, technology and personalization.</p><p>We don’t want people to simply buy products. We want them to create something they can remember.</p></div>
+    </section>
+
+    <section class="vision section-dark">
+      <div class="vision-card reveal"><p class="eyebrow">OUR VISION</p><h2>“To create a future where fashion isn’t disposable, memories aren’t forgotten and every product has the possibility of a second story.”</h2></div>
+      <div class="vision-card reveal"><p class="eyebrow">OUR MISSION</p><h2>“To combine fashion, AI and emotional storytelling to help people rewear, personalize and reconnect with the things they love.”</h2></div>
+    </section>
+
+    <section class="future section-cream">
+      <div class="section-intro reveal"><p class="eyebrow">ROADMAP / 13</p><h2>WHAT’S <em>NEXT?</em></h2><p>Some features are live prototypes. Others are deliberately labelled as coming soon.</p></div>
+      <div class="roadmap">
+        <div><span>LIVE PROTOTYPE</span><h3>AI Style Recognition</h3><p>Visual-style simulation is active in this prototype.</p></div>
+        <div><span>COMING SOON</span><h3>AI Design Generator</h3><p>Connect to a production image model.</p></div>
+        <div><span>COMING SOON</span><h3>QR Memory Technology</h3><p>Private, persistent digital product stories.</p></div>
+        <div><span>COMING SOON</span><h3>Digital Product Stories</h3><p>Rich memory pages linked to physical pieces.</p></div>
+        <div><span>COMING SOON</span><h3>Smart Wardrobe</h3><p>Recommendations based on what you already own.</p></div>
+        <div><span>COMING SOON</span><h3>Personalized Recommendations</h3><p>Adaptive product discovery over time.</p></div>
+        <div><span>COMING SOON</span><h3>Rewear Suggestions</h3><p>Ideas for extending a product’s useful life.</p></div>
+        <div><span>COMING SOON</span><h3>Community Memory Marketplace</h3><p>Stories, transformations and limited editions.</p></div>
+      </div>
+    </section>
+
+    <section class="b2b section-dark" id="b2b">
+      <div class="b2b-copy reveal"><p class="eyebrow">B2B / 14</p><h2>YOUR BRAND.<br><em>THEIR STORY.</em></h2><p>Still Yours can extend the same emotional design system to corporate gifting, college merchandise, event merchandise, employee gifting, customized apparel, personalized stationery and brand collaborations.</p><button class="light-btn" data-scroll="#contact">START A COLLABORATION →</button></div>
+      <div class="b2b-list reveal"><div>01 <span>Corporate gifting</span></div><div>02 <span>College merchandise</span></div><div>03 <span>Event merchandise</span></div><div>04 <span>Employee gifting</span></div><div>05 <span>Customized apparel</span></div><div>06 <span>Brand collaborations</span></div></div>
+    </section>
+
+    <section class="business section-cream">
+      <div class="section-intro centered reveal"><p class="eyebrow">THE BUSINESS / 15</p><h2>VALUE THAT <em>GROWS</em> WITH MEANING.</h2></div>
+      <div class="business-grid">
+        <div><span>01</span><h3>PRODUCT SALES</h3><p>Fashion and personalized products.</p></div>
+        <div><span>02</span><h3>PREMIUM CUSTOMIZATION</h3><p>Paid advanced personalization.</p></div>
+        <div><span>03</span><h3>AI DESIGN SERVICES</h3><p>AI-generated custom designs.</p></div>
+        <div><span>04</span><h3>MEMORY EXPERIENCE</h3><p>Premium QR/digital memory features.</p></div>
+        <div><span>05</span><h3>B2B</h3><p>Corporate, college and event customization.</p></div>
+        <div><span>06</span><h3>COLLABORATIONS</h3><p>Limited-edition collections with creators and brands.</p></div>
+      </div>
+    </section>
+
+    <section class="contact section-warm" id="contact">
+      <div class="contact-copy reveal"><p class="eyebrow">CONTACT / 16</p><h2>LET’S MAKE SOMETHING<br><em>WORTH KEEPING.</em></h2><p>Have a collaboration, custom request or story you want to turn into something new?</p></div>
+      <form class="contact-form reveal" id="contactForm">
+        <input required placeholder="Your name"><input required type="email" placeholder="Email address"><input placeholder="Company / project (optional)">
+        <textarea required rows="5" placeholder="Tell us a little about it…"></textarea>
+        <button class="primary-btn" type="submit">SEND ENQUIRY →</button>
+      </form>
+    </section>
+
+    <section class="final-cta section-dark">
+      <p class="eyebrow reveal">THE NEXT CHAPTER</p><h2 class="reveal">WHAT WILL YOUR<br><em>SECOND STORY</em> BE?</h2><p class="reveal">Your memories made it here. Now give them somewhere new to live.</p>
+      <div class="hero-actions reveal"><button class="light-btn" data-scroll="#ai">UPLOAD YOUR MEMORY</button><button class="text-btn light" data-scroll="#shop">SHOP STILL YOURS →</button></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top"><div><a class="wordmark footer-logo" href="#home">STILL <span>YOURS</span></a><p>Some things deserve a second story.</p></div><div class="footer-links"><a href="#shop">Shop</a><a href="#ai">AI Style Match</a><a href="#customize">Customize</a><a href="#story">Our Story</a><a href="#wall">Memory Wall</a><a href="#b2b">B2B</a><a href="#contact">Contact</a></div><div class="socials"><a href="#">Instagram ↗</a><a href="#">Pinterest ↗</a><a href="#">LinkedIn ↗</a></div></div>
+    <div class="newsletter"><div><p class="eyebrow">NEWSLETTER</p><h3>GET STORIES WORTH WEARING.</h3></div><form id="newsletterForm"><input required type="email" placeholder="Your email address"><button type="submit">SUBSCRIBE</button></form></div>
+    <div class="footer-bottom"><span>© 2026 STILL YOURS</span><span>FASHION × TECHNOLOGY × MEMORY</span><span>MADE FOR SECOND STORIES.</span></div>
+  </footer>
+
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping bag">
+    <div class="drawer-head"><h2>YOUR BAG</h2><button class="close" data-close="cartDrawer">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-summary"><span>Subtotal</span><strong id="cartTotal">₹0</strong></div>
+    <button class="primary-btn" id="checkoutBtn">CHECKOUT PROTOTYPE →</button>
+    <p class="fineprint">Prototype only — no payment is processed.</p>
+  </aside>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <div class="modal" id="productModal"><div class="modal-card product-modal"><button class="close" data-close="productModal">×</button><div id="productDetail"></div></div></div>
+  <div class="modal" id="memoryModal"><div class="modal-card memory-modal"><button class="close" data-close="memoryModal">×</button><p class="eyebrow">PRIVATE MEMORY / DEMO</p><h2>DAD'S FIRST OFFICE SHIRT</h2><div class="memory-demo-grid"><div class="memory-demo-image"></div><div><span>1998</span><h3>THIS WASN’T JUST A JACKET.</h3><p>It was the jacket I wore on my first college trip.</p><div class="memory-meta"><b>PHOTO</b><b>VOICE</b><b>MESSAGE</b><b>DATE</b></div><button class="dark-btn" id="playMemory">PLAY VOICE MEMORY ▶</button></div></div><p class="fineprint">Planned technology concept: private digital story pages connected to a product QR.</p></div></div>
+  <div class="modal" id="storyModal"><div class="modal-card story-modal"><button class="close" data-close="storyModal">×</button><p class="eyebrow">A MEMORY WALL STORY</p><h2 id="storyTitle">STILL YOURS</h2><p id="storyBody"></p><button class="dark-btn" data-close="storyModal">CLOSE STORY</button></div></div>
+  <div class="modal" id="searchModal"><div class="modal-card search-modal"><button class="close" data-close="searchModal">×</button><p class="eyebrow">SEARCH THE EDIT</p><input id="globalSearch" autofocus placeholder="Try “hoodie”, “memory”, “tote”…"><div id="searchResults"></div></div></div>
+  <div class="modal" id="shareModal"><div class="modal-card"><button class="close" data-close="shareModal">×</button><p class="eyebrow">MEMORY WALL</p><h2>SHARE YOUR STORY.</h2><form id="shareForm" class="contact-form"><input required placeholder="Your name"><input required placeholder="Product"><textarea required rows="5" placeholder="The story behind it…"></textarea><button class="primary-btn">SUBMIT STORY →</button></form></div></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
